@@ -11,12 +11,7 @@ public class MoodAnalyzerMain {
 		this.msg=msg;
 	}
 	
-	public String analyseMood(String msg) {
-		this.msg=msg;
-		return analyseMood();
-	}
-	
-	public String analyseMood()
+	public String analyseMood() throws MoodAnalysisException
 	{
 		try {
 			if(msg.contains("Sad"))
@@ -24,9 +19,12 @@ public class MoodAnalyzerMain {
 			else
 				return "Happy";
 			}
-			catch(NullPointerException e) {
-				return "Happy";
-			}
+		catch(Exception e) {
+			if(msg==null)
+				throw new MoodAnalysisException("Please provide valid details, dont provide null in arguments");
+			else
+				throw new MoodAnalysisException("Please provide valid details, dont keep empty in arguments");
+		}
 	}
 }
 
