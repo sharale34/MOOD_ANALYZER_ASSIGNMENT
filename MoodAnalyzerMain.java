@@ -3,7 +3,7 @@ package com.BridgeLabz.MoodAnalyzer;
 import java.util.Scanner;
 
 public class MoodAnalyzerMain {
-
+	
 	public String analyseMood(String msg)
 	{
 		if(msg.contains("Sad"))
